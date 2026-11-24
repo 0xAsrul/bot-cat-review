@@ -14,6 +14,7 @@ MAX_CHARS = 200
 def main() -> None:
     assert LINE, "review must not be empty"
     assert LINE.strip() == LINE, "review must not have leading/trailing whitespace"
+    assert "  " not in LINE, "review must not contain double spaces"
     assert "\n" not in LINE and "\r" not in LINE, "review must be a single line"
     assert 1 <= len(LINE) <= MAX_CHARS, "review must be 1-200 characters"
 
